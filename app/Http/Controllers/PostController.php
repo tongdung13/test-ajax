@@ -24,8 +24,10 @@ class PostController extends Controller
     {
         $posts = new Post();
         $posts->name = $request->name;
-        $posts->description = $request->description;
-        $posts->slug = Str::slug($request->name);
+        // $posts->description = $request->description;
+        $posts->price = $request->price;
+        $posts->test = $request->test;
+        // $posts->slug = Str::slug($request->name);
         $posts->save();
 
         return response()->json($posts);
